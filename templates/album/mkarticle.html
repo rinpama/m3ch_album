@@ -1,0 +1,57 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{#{% block title %}#}
+{#{% endblock %}#}
+
+{#{% block header %}#}
+{#{% endblock %}#}
+
+{% block body %}
+    <h2>TOP</h2>
+    <table>
+        {% for item in posts %}
+            <tr>
+                {#            <td>{{ item.id }}</td>#}
+                {#            <td>{{ item.category }}</td>#}
+                <td class="h3">{{ item.title }}</td>
+                <td>{{ item.id }}</td>
+                <td>(({{ item.name }}</td>
+                <td>{{ item.age }}))</td>
+                <td><a href="{% url 'album:detail' album_id=item.id %}">詳細</a></td>
+                {% if request.user.is_authenticated %}
+                    <th><a href="{% url 'album:update' item.pk %}">編集</a></th>
+                    <th><a href="{% url 'album:delete' item.pk %}">削除</a></th>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+        {% for pt in pot %}
+            <form action="{% url 'album:mkmake1' number=pt.id %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <tr>
+                    <td></td>
+                </tr>
+                <td><input type="submit" value="Make"></td>
+            </form>
+        {% endfor %}
+    </table>
+    <hr>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'accounts:home' %}">トップページに戻る</a>
+        <hr>
+        <a href="{% url 'accounts:logout' %}">ログアウト</a>
+    {% else %}
+        <a href="{% url 'accounts:top' %}">トップページに戻る</a>
+    {% endif %}
+    {#    <a href="{% url 'accounts:logout' %}">ログアウト</a>#}
+{% endblock %}
+
+{#{% block footer %}#}
+{#{% endblock %}#}

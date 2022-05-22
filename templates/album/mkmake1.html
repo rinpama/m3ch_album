@@ -1,0 +1,30 @@
+{% extends '../mkbase.html' %}
+{% load static %}
+
+{% block header %}
+    <h1>{{ album_text.title }}</h1>
+{% endblock %}
+
+{% block sec-1 %}
+    {{ album_text.explanation| safe }}
+{% endblock %}
+
+{% block sec-2 %}
+    {{ memo_text.explanation| safe }}
+{% endblock %}
+
+{% block sec-3 %}
+    {{ ko_text.explanation| safe }}
+{% endblock %}
+
+{% block sec-4 %}
+    {{ album.explanation| safe }}
+{% endblock %}
+
+{% block sec-5 %}
+    {{ memo_text.explanation| safe }}
+{% endblock %}
+
+{% block sec-6 %}
+    {{ ko_text.explanation| safe }}
+{% endblock %}}

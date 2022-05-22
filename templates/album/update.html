@@ -1,0 +1,23 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{#{% block title %}#}
+{#{% endblock %}#}
+
+{#{% block header %}#}
+{#{% endblock %}#}
+
+{% block body %}
+     update
+        <a href="{% url 'accounts:home' %}">トップページに戻る</a>
+        <a href="{% url 'accounts:logout' %}">ログアウト</a>
+        <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="保存">
+    </form>
+
+{% endblock %}
+
+{#{% block footer %}#}
+{#{% endblock %}#}

@@ -1,0 +1,27 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{#{% extends '../layout.html' %}#}
+{#{% load static %}#}
+
+{% block title %}Homeﾍﾟｰｼﾞ{% endblock %}
+
+{#{% block header %}#}
+{#{% endblock %}#}
+
+{% block body %}
+<div class="container">
+    <h1 class="my-5"></h1>
+    <p>{{ user.username }}さん、こんにちは。</p>
+    <a href="{% url 'album:album' %}">アルバム</a>
+     <hr>
+    <a href="{% url 'album:mkarticle' %}">MK_Article</a>
+    <hr><hr>
+    <a href="{% url 'album:create' %}">NewArticle作成</a>
+    <hr>
+    <a href="{% url 'accounts:logout' %}">ログアウト</a>
+</div>
+{% endblock %}
+
+{#{% block footer %}#}
+{#{% endblock %}#}

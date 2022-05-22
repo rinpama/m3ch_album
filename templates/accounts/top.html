@@ -1,0 +1,27 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{#{% extends '../layout.html' %}#}
+{#{% load static %}#}
+
+{% block title %}Topﾍﾟｰｼﾞ{% endblock %}
+
+{#{% block header %}#}
+{#{% endblock %}#}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-5">Top画面</h1>
+        <a href="{% url 'album:album' %}">Album</a>
+        <hr>
+        <a href="{% url 'album:mkarticle' %}">MK_Article</a>
+        <hr>
+        <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary">編集するならLogin</a>
+        <hr>
+{#        <a href="{% url 'album:create' %}">NewArticle作成</a>#}
+{#        <hr>#}
+    </div>
+{% endblock %}
+
+{#{% block footer %}#}
+{#{% endblock %}#}

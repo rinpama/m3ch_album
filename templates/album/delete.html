@@ -1,0 +1,25 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{#{% block title %}#}
+{#{% endblock %}#}
+
+{#{% block header %}#}
+{#{% endblock %}#}
+
+{% block body %}
+    delete
+     <form method="post">
+        {% csrf_token %}
+         <p><span class="h4">{{ object.title }}</span>({{ object.name }}({{ object.age }}))を削除しますか？</p>
+        <input type="submit" value="削除する">
+    </form>
+        <a href="{% url 'accounts:home' %}">トップページに戻る</a>
+        <a href="{% url 'accounts:logout' %}">ログアウト</a>
+
+
+
+{% endblock %}
+
+{#{% block footer %}#}
+{#{% endblock %}#}
